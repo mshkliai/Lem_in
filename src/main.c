@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list_lem_in.h"
+#include "../inc/list_lem_in.h"
 
 static int	how_ways(t_room **rooms)
 {

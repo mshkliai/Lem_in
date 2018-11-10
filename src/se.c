@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list_lem_in.h"
+#include "../inc/list_lem_in.h"
 
 int	se(char **line, t_room **rooms, int *k, char **check)
 {

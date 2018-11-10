@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list_lem_in.h"
+#include "../inc/list_lem_in.h"
 
 static void		valid_room(t_room *room, char *str)
 {

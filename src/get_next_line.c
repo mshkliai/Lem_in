@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../inc/list_lem_in.h"
 
 static size_t	l(char *str)
 {
@@ -24,7 +24,7 @@ static size_t	l(char *str)
 	return (i);
 }
 
-static char		*join_free(char *buf, char *str, int i)
+static char		*join_free_f(char *buf, char *str, int i)
 {
 	char	*str3;
 
@@ -67,10 +67,10 @@ static void		cut(char **line, t_list **lst, int *ret)
 		ft_strclr((*lst)->content);
 	if (n == ft_strlen(*line))
 		return ;
-	(*lst)->content = join_free((*lst)->content, *line + 1 + n, 0);
+	(*lst)->content = join_free_f((*lst)->content, *line + 1 + n, 0);
 	ft_strncpy(buf, *line, n);
 	buf[n] = '\0';
-	*line = join_free(*line, buf, 0);
+	*line = join_free_f(*line, buf, 0);
 }
 
 static void		finding(t_list **lst, size_t fd)
@@ -110,11 +110,11 @@ int				get_next_line(const int fd, char **line)
 	finding(&lst, (size_t)fd);
 	str = ft_strnew(BUFF_SIZE);
 	*line = NULL;
-	*line = join_free(*line, lst->content, 1);
+	*line = join_free_f(*line, lst->content, 1);
 	while (ft_strlen(str) == l(str) && (ret = read(fd, str, BUFF_SIZE)) > 0)
 	{
 		str[ret] = '\0';
-		*line = join_free(*line, str, 1);
+		*line = join_free_f(*line, str, 1);
 	}
 	cut(line, &lst, &ret);
 	ft_strdel(&str);

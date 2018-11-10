@@ -34,8 +34,9 @@
 # define DE "\e[1;32mError: Double end.\e[0m\n"
 # define NA "\e[1;33mError: No ants.\e[0m\n"
 
-# include "./gnl/get_next_line.h"
-# include "./printf/libftprintf.h"
+# define BUFF_SIZE 1
+
+# include "../printf/libftprintf.h"
 
 struct s_room;
 
@@ -68,6 +69,7 @@ typedef struct		s_start
 	char			*line;
 }					t_start;
 
+int					get_next_line(const int fd, char **line);
 int					se(char **line, t_room **rooms, int *k, char **check);
 int					len_c(char *line, char c);
 t_room				*new_room(char *str);

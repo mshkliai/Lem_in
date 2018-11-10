@@ -15,14 +15,14 @@ NAME = libft.a
 all: $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror -c -I libft.h -c ft*.c
-	ar rc $(NAME) *.o
+	@gcc -Wall -Wextra -Werror -c -I libft.h -c ft*.c
+	@ar rc $(NAME) *.o
 	ranlib $(NAME)
 
 clean:
 	rm -f *.o
 
-fclean: clean
+fclean: @clean
 	rm -f $(NAME)
 
-re: fclean all
+re: @fclean all

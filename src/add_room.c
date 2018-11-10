@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list_lem_in.h"
+#include "../inc/list_lem_in.h"
 
 static void	room_start(t_room **rooms, t_room *room)
 {

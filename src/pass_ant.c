@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list_lem_in.h"
+#include "../inc/list_lem_in.h"
 
 static char	*move_him(t_room *links, char *line, int *ants)
 {

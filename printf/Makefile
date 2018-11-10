@@ -39,16 +39,16 @@ FLAGS = -Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME):
-	gcc $(FLAGS) -c -I $(HEADER) -c $(SRC) $(addprefix $(LIB), $(DRC_LIB))
-	ar rc $(NAME) $(SRC:.c=.o) $(DRC_LIB:.c=.o)
-	ranlib $(NAME)
+	@gcc $(FLAGS) -c -I $(HEADER) -c $(SRC) $(addprefix $(LIB), $(DRC_LIB))
+	@ar rc $(NAME) $(SRC:.c=.o) $(DRC_LIB:.c=.o)
+	@ranlib $(NAME)
 
 clean:
-	rm -f $(DRC_LIB:.c=.o) $(SRC:.c=.o)
+	@rm -f $(DRC_LIB:.c=.o) $(SRC:.c=.o)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
-re: fclean all
+re: @fclean all
 
 .PHONY:all clean fclean re

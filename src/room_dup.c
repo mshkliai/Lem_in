@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   join_free.c                                        :+:      :+:    :+:   */
+/*   room_dup.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshkliai <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/10 15:26:40 by mshkliai          #+#    #+#             */
-/*   Updated: 2018/06/11 14:09:52 by mshkliai         ###   ########.fr       */
+/*   Created: 2018/06/03 11:31:22 by mshkliai          #+#    #+#             */
+/*   Updated: 2018/06/06 15:44:27 by mshkliai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list_lem_in.h"
+#include "../inc/list_lem_in.h"
 
-char	*join_free(char *line, char *line2, int flag)
+t_room	*room_dup(t_room *room)
 {
-	char	*line3;
-	char	*line4;
+	t_room	*end;
 
-	if (!line2 || !line)
+	if (!(end = (t_room*)malloc(sizeof(*end))))
 		return (NULL);
-	line3 = ft_strdup(line);
-	line4 = ft_strdup(line2);
-	ft_strdel(&line);
-	line = ft_strjoin(line3, line4);
-	if (flag == 1)
-		ft_strdel(&line2);
-	ft_strdel(&line3);
-	ft_strdel(&line4);
-	return (line);
+	end->name = ft_strdup(room->name);
+	end->x = room->x;
+	end->y = room->y;
+	end->in = room->in;
+	end->ant = room->ant;
+	end->next = NULL;
+	return (end);
 }
