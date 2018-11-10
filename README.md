@@ -1,7 +1,7 @@
 # Lem_in - elementary algorithmic project
 `Ant farm manager:`
 The goal of this project is to find the quickest way to get n ants across the farm.
-
+***
 ### ***Usage:***
 * `git clone https://github.com/mshkliai/Lem_in.git`
 * `cd Lem_in`
